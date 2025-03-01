@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Welfare</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(to right, #ff9966, #ff5e62); color: white; }
+        .section-bg { background: url('https://source.unsplash.com/1600x900/?forest') no-repeat center center/cover; padding: 5rem 0; color: white; }
+        .card { transition: transform 0.3s; }
+        .card:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Animal Welfare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#adopt">Adopt</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#endangered">Endangered Species</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#donate">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section with Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://source.unsplash.com/1600x900/?wildlife" class="d-block w-100" alt="Wildlife">
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/1600x900/?animals" class="d-block w-100" alt="Animals">
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/1600x900/?nature" class="d-block w-100" alt="Nature">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+    
+    <!-- Adopt a Pet Section -->
+    <section id="adopt" class="container py-5">
+        <h2 class="text-center">Adopt a Pet</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://source.unsplash.com/400x300/?dog" class="card-img-top" alt="Dog">
+                    <div class="card-body">
+                        <h5 class="card-title">Bella</h5>
+                        <p class="card-text">Friendly and loving dog looking for a home.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://source.unsplash.com/400x300/?cat" class="card-img-top" alt="Cat">
+                    <div class="card-body">
+                        <h5 class="card-title">Whiskers</h5>
+                        <p class="card-text">Playful and affectionate cat ready for adoption.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Endangered Species Section -->
+    <section id="endangered" class="section-bg">
+        <div class="container">
+            <h2 class="text-center">Endangered Species</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/400x300/?tiger" class="card-img-top" alt="Tiger">
+                        <div class="card-body">
+                            <h5 class="card-title">Bengal Tiger</h5>
+                            <p class="card-text">One of the most endangered species due to habitat loss.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/400x300/?panda" class="card-img-top" alt="Panda">
+                        <div class="card-body">
+                            <h5 class="card-title">Giant Panda</h5>
+                            <p class="card-text">Efforts are being made to preserve their natural habitats.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Donate Section -->
+    <section id="donate" class="section-bg text-center">
+        <div class="container">
+            <h2>Support Us</h2>
+            <p>Your donations help us rescue and care for animals in need.</p>
+            <button class="btn btn-primary">Donate Now</button>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5">
+        <h2 class="text-center">Contact Us</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </section>
+    
+    <script>
+        // Smooth Scrolling for Navbar Links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Adopt a Pet Alert
+        document.querySelectorAll('.card-title').forEach(pet => {
+            pet.addEventListener('click', function () {
+                alert(You clicked on ${this.textContent}. Consider adopting! 🐾);
+            });
+        });
+
+        // Donation Confirmation
+        document.querySelector(".btn-primary").addEventListener("click", function () {
+            let confirmDonation = confirm("Do you want to donate and help animals?");
+            if (confirmDonation) {
+                alert("Thank you for your support! ❤️");
+            }
+        });
+
+        // Form Validation
+        document.querySelector("form").addEventListener("submit", function (e) {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                e.preventDefault();
+                alert("Please fill out all fields before submitting.");
+            }
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
